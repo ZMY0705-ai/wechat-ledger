@@ -152,7 +152,7 @@ node -v      # 应该输出 v22.x 或更高
 有 git 的话：
 
 ```powershell
-git clone <这个仓库的地址> 记账
+git clone https://github.com/ZMY0705-ai/wechat-ledger.git 记账
 cd 记账
 ```
 
