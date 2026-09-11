@@ -1,0 +1,21 @@
+{
+  "name": "ledger-bridge",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "微信桥接：iLink 长轮询 + LLM 结构化抽取记账 + 陪聊（同一个 bot，零运行时依赖）",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "login": "node src/weixin/login.js",
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "say": "node src/chat/cli.js --say",
+    "chat": "node src/chat/cli.js",
+    "test": "node --disable-warning=ExperimentalWarning test/parse.test.js && node --disable-warning=ExperimentalWarning test/gate.test.js && node --disable-warning=ExperimentalWarning test/llm.test.js && node --disable-warning=ExperimentalWarning test/handler.test.js && node --disable-warning=ExperimentalWarning test/brief.test.js && node --disable-warning=ExperimentalWarning test/chat-reply.test.js && node --disable-warning=ExperimentalWarning test/chat-memory.test.js && node --disable-warning=ExperimentalWarning test/chat-persona.test.js && node --disable-warning=ExperimentalWarning test/chat-llm.test.js && node --disable-warning=ExperimentalWarning test/chat-engine.test.js && node --disable-warning=ExperimentalWarning test/chat-gate.test.js && node --disable-warning=ExperimentalWarning test/chat-router.test.js",
+    "live": "node --disable-warning=ExperimentalWarning test/live.js",
+    "auth": "node test/auth.js"
+  },
+  "optionalDependencies": {
+    "qrcode-terminal": "^0.12.0"
+  }
+}

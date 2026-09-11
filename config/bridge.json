@@ -1,0 +1,58 @@
+{
+  "weixin": {
+    "baseUrl": "https://ilinkai.weixin.qq.com",
+    "allowedUserIds": []
+  },
+
+  "llm": {
+    "provider": "deepseek",
+    "baseUrl": "https://api.deepseek.com",
+    "apiKeyEnv": "DEEPSEEK_API_KEY",
+    "model": "deepseek-v4-flash",
+    "extraBody": { "thinking": { "type": "disabled" } },
+    "maxTokens": 500,
+    "timeoutMs": 30000,
+    "maxRetries": 2
+  },
+
+  "chat": {
+    "enabled": true,
+
+    "llm": {
+      "model": "deepseek-v4-flash",
+      "temperature": 0.85,
+      "maxTokens": 800,
+      "timeoutMs": 45000
+    },
+
+    "persona": {
+      "name": "小满",
+      "description": "你在微信里认识很久的一个朋友，说话随意、有点幽默，会关心人但不腻歪。",
+      "style": [
+        "像微信上真人聊天：短句、口语，可以有语气词，偶尔一个表情",
+        "一般 1~3 句，别写成小作文；对方想深聊再展开",
+        "不用 markdown（微信里不渲染）：不要 # 标题、** 加粗、- 列表、代码块",
+        "不重复对方的话，也不说「我理解你的感受」这类套话",
+        "有自己的看法和情绪，可以调侃、可以反驳，但不说教、不催他做决定"
+      ],
+      "systemPrompt": null
+    },
+
+    "memory": {
+      "maxTurns": 24,
+      "digestEveryTurns": 12,
+      "maxFacts": 40,
+      "digestCooldownMinutes": 10
+    },
+
+    "greetOnStart": false,
+    "greetIdleHours": 8
+  },
+
+  "ledgerBaseUrl": "http://127.0.0.1:8787",
+  "confirmThresholdCents": 20000,
+  "draftTtlMinutes": 30,
+
+  "pushBriefOnStart": true,
+  "briefCheckMinutes": 15
+}

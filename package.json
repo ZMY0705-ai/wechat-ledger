@@ -1,0 +1,13 @@
+{
+  "name": "wechat-ledger",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "微信 AI 记账：本地记账服务 + 微信桥接",
+  "engines": { "node": ">=22.5" },
+  "scripts": {
+    "ledger": "node --disable-warning=ExperimentalWarning cli/src/index.js",
+    "serve": "node --disable-warning=ExperimentalWarning server/src/index.js",
+    "test": "node --disable-warning=ExperimentalWarning --test \"server/test/*.test.js\""
+  }
+}

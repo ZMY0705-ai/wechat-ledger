@@ -1,0 +1,19 @@
+# 仓库里统一存 LF，检出时按下面规则转换。
+# 为什么专门管 .cmd / .ps1：批处理文件用 LF 换行在部分 Windows 环境下会出问题，
+# 而且从 GitHub 下载 ZIP 的人不会经过 git 的自动转换，只能靠这里的声明。
+
+* text=auto
+
+*.ps1   text eol=crlf
+*.cmd   text eol=crlf
+
+*.js    text eol=lf
+*.json  text eol=lf
+*.md    text eol=lf
+*.css   text eol=lf
+*.html  text eol=lf
+*.sql   text eol=lf
+*.yml   text eol=lf
+
+*.png   binary
+*.ico   binary
